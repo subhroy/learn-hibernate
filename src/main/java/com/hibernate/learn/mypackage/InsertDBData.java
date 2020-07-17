@@ -11,18 +11,20 @@ public class InsertDBData {
     {
 
         Configuration config = new Configuration();
-        Session session = SessionFactoryHelper.getSessionFactory().getCurrentSession();
-        Transaction t = session.beginTransaction();
+        Session session = SessionFactoryHelper.getSessionFactory().openSession();
+        Transaction transactionObj = session.beginTransaction();
 
         Employee empObj=new Employee();
-        empObj.setId(1);
-        empObj.setFirstName("Subhasis");
-        empObj.setLastName("Roy");
+        empObj.setId(4);
+        empObj.setFirstName("Vittal");
+        empObj.setLastName("Das");
 
-        /*session.save(empObj);
-        t.commit();
-        System.out.println("Data successfully inserted.");
-        sessionFactory.close();
-        session.close();*/
+        System.out.println("Session created successfully.");
+        session.save(empObj);
+        transactionObj.commit();
+        System.out.println("Data successfully inserted in emp table..");
+
+        session.close();
+        SessionFactoryHelper.closeSessionFactory();
     }
 }

@@ -29,4 +29,11 @@ public class SessionFactoryHelper {
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
     }
+
+    /**
+     * Closing the session factory object
+     */
+    public static void closeSessionFactory(){
+        sessionFactory.close();
+    }
 }
