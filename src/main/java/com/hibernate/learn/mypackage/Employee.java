@@ -3,7 +3,7 @@ package com.hibernate.learn.mypackage;
 public class Employee {
 
     private int id;
-    private String firstNam;
+    private String firstName;
     private String lastName;
 
 
@@ -16,12 +16,12 @@ public class Employee {
         this.id = id;
     }
 
-    public String getFirstNam() {
-        return firstNam;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstNam(String firstNam) {
-        this.firstNam = firstNam;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
